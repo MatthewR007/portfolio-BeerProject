@@ -1,0 +1,189 @@
+/* ALL PAGES */
+
+.image-1 {
+    background-image: url('img/forest-bg-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body, html {
+    font-family: 'Volkhov', serif;
+}
+
+/* HOMEPAGE CAROUSEL */
+
+.carousel-indicators li {
+    width: 5px;
+    height: 10px;
+    border-radius: 100px;
+}
+
+.carousel-indicators {
+    bottom: 135px;
+    position: fixed;
+}
+
+.carousel-top {
+    margin-top: 120px;
+}
+
+/* FOOTER CARDS */
+
+.card-1 {
+    background-color: rgba(100, 58, 11, 0.5);
+    color: rgb(194, 147, 108);
+    font-size: small;
+    height: 14%;
+}
+
+.card-2 {
+    background-color: rgba(68, 39, 5, 0.5);
+    color:rgb(194, 147, 108);
+    font-size: small;
+}
+
+.card-3 {
+    background-color:rgba(100, 58, 11, 0.0);
+    font-size: xx-small;
+    margin: 0%;
+    padding: 5px 10px 0px;
+}
+
+.card-4 {
+    background-color:rgba(100, 58, 11, 0.0);
+    color:rgb(248, 129, 129);    
+    font-size: 6px;
+    text-align: right;
+}
+
+/* SECONDARY PAGES BREADCRUMBS */
+
+.arr-right .breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+    color: #69afaf;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.container-breadcrumb {
+    margin-top: 50px;
+    padding-top: 60px;
+}
+
+/* FORUM PAGE */
+
+.container-forum {
+    max-width: 100%;
+    background-color:rgba(63, 87, 86, 0.5);
+    margin-bottom: 10px;
+    color: rgb(226, 220, 213);
+    font-size: xx-small;
+}
+
+.container-forum h4 {
+    background-color:rgba(35, 49, 49, 0.5);
+}
+
+.container-forum p {
+    max-width: 90%;
+    color: rgb(189, 182, 174)
+}
+
+.p-1 {
+    max-width: 40%;
+}
+
+.for-h2 {
+    margin: -15px 20px 0px;
+    color:black;
+    font-size: 50px;
+    -webkit-text-stroke: 0.5px white;
+}
+
+.container-forum a {
+    color: rgb(226, 220, 213);
+}
+
+/* FORUM SUBPAGES */
+
+.for-h3 {
+    margin: -15px 20px 0px;
+    color:black;
+    font-size: 40px;
+    -webkit-text-stroke: 0.5px white;
+}
+
+.p-h3 {
+    font-size: 10px;
+    margin: -8px 50px 10px;
+    color: black;
+}
+
+.scrollStyle-2 {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+/* STYLES PAGE */
+
+.card-styles {
+    background-color:rgba(35, 49, 49, 0.5);
+    color: rgb(189, 182, 174);
+    font-size: small;
+}
+
+.cH-color {
+    color: rgb(226, 220, 213);
+    font-size: x-large;
+}
+
+.card-header h5 {
+    background-color:rgba(35, 49, 49, 0.5);
+}
+
+.table-color {
+    color: rgb(189, 182, 174);
+}
+
+.scrollStyle {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+/* QUIZZES PAGE */
+
+#quiz {
+    background: rgb(63, 87, 86, 0.5);
+    color: rgb(226, 220, 213);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+#afterSubmit {
+    display: none;
+    background: rgb(63, 87, 86, 0.5);
+    color: rgb(226, 220, 213);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 96%;
+}
+
+#btnQ {
+    background-color: rgb(25, 71, 25, 0.5);
+    color: white;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 5px 15px;
+    margin: 10px 0px 10px 1000px;
+}
+
+#quiz p, #afterSubmit div {
+    background-color:rgba(35, 49, 49, 0.5);
+    padding: 10px;
+}
+
+.mc {
+    margin: 0px 50px 0px;
+}

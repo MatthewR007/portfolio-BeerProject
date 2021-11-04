@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device=width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov&display=swap" rel="stylesheet">
+
+    <title>BeerEon</title>
+</head>
+
+<!-- Body -->
+<body class="view" style="background-image: url('img/fantasy-bg-crop.jpg'); background-repeat: no-repeat; background-size: cover; height: 100vh;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(48, 45, 0, 0.5);">
+        <a class="navbar-brand text-info" href="#"><img src="img/beer-mug2-cut.png" height="85" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-info" href="index.html"><i class="icon-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#"><i class="icon-beer"></i> Styles <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#"><i class="icon-anchor"></i> Travel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="forum.html"><i class="icon-book"></i> Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="quizzes.html"><i class="icon-puzzle-piece"></i> Quizzes</a>
+                </li>
+            </ul>
+            <span class="btn dropdown">
+                <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-user icon-large"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" style="background-color:rgba(121, 95, 48, 0.3)" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#loginModal"><i class="icon-signin"></i> Login</a>
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#signUpModal"><i class="icon-edit"></i> Sign-up</a>
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#searchModal"><i class="icon-search"></i> Search</a>
+                    </div>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="loginEmail">Email address</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="loginPassword">Password</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Sign up</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="signUpEmail">Email address</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="signUpEmail" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="signUpPassword">Password</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="password" class="form-control form-control-sm" id="signUpPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Sign up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Search</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="search">Search</label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="search" placeholder="Enter search">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="row">
+            <div class="col container-breadcrumb ">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb arr-right nav-light" style="background-color:rgb(9, 27, 46, .2)">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-light">Home</a></li>
+                        <li class="breadcrumb-item text-light active" aria-current="page">Styles</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordian Body -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="accordion">
+                    <div class="card card-styles">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link cH-color" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Beer Types
+                                </button>
+                            </h5>
+                        </div>                  
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body scrollStyle">
+                                <div class="col">
+                                    <ul>
+                                        <li>Ale</li>
+                                        <li>Cask Ale</li>
+                                        <li>Kellerbier</li>
+                                        <li>Lager</li>
+                                        <li>Strong Ale</li>
+                                        <li>Sour Ale</li>
+                                        <li>Wheat Beer</li>
+                                        <li>Zwickelbier</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-styles">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed cH-color" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Classic Styles
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body scrollStyle">
+                                <div class="col mb-4">
+                                    Beer style is a term used to differentiate and categorize beers by various factors, including appearance, flavour, ingredients, production method, history, or origin. There is no universally agreed list of beer styles, as different countries and organisations have different sets of criteria.
+                                </div>
+                                <div class="col">
+                                    <table class="table table-bordered table-color">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Color</th>
+                                                <th scope="col">Taste</th>
+                                                <th scope="col">Sample</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Amber Ale</th>
+                                                <td>Copper to Reddish Brown</td>
+                                                <td>Light caramel malt with low fruity-ester flavor.</td>
+                                                <td>Fat Tire</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Bitter</th>
+                                                <td>Gold to Copper</td>
+                                                <td>Low to medium malt sweetness with fruity esters.</td>
+                                                <td>Bathams</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Blonde Ale</th>
+                                                <td>Straw to Light Amber</td>
+                                                <td>Light malt sweetness with bread, toast, and wheat flavors.</td>
+                                                <td>Kirby</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Brown Ale</th>
+                                                <td>Copper to Dark Brown</td>
+                                                <td>Caramel, chocolate, and toast malt with subdued fruity flavor..</td>
+                                                <td>Newcastle</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Cream Ale</th>
+                                                <td>Straw to Gold</td>
+                                                <td>Pale malt sweetness that is light and refreshing.</td>
+                                                <td>Creole</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Hefeweizen</th>
+                                                <td>Straw to Amber</td>
+                                                <td>Medium to high sweetness with fruity flavors.</td>
+                                                <td>Mango Cart</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">India Pale Ale</th>
+                                                <td>Gold to Light Brown</td>
+                                                <td>High hoppy flavor and bitterness with high malt character.</td>
+                                                <td>Sculpin</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Lager</th>
+                                                <td>Straw to Gold</td>
+                                                <td>Grainy maltiness with low fruity-ester flavors.</td>
+                                                <td>Heineken</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Malt Liquor</th>
+                                                <td>Straw to Gold</td>
+                                                <td>Malted barely with sugar and corn for high alcohol concentration.</td>
+                                                <td>St. Ides</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Pale Ale</th>
+                                                <td>Golden to Copper</td>
+                                                <td>High hoppiness with bready, caramel maltiness and citrus esters.</td>
+                                                <td>Sierra Nevada</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Pilsner</th>
+                                                <td>Straw to Pale</td>
+                                                <td>Moderate hop and bitter flavor with mild sweet and maltiness.</td>
+                                                <td>Pivo Pils</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Porter</th>
+                                                <td>Brown to Black</td>
+                                                <td>Caramel flavours balanced with rich, dark malty bitterness.</td>
+                                                <td>Public Enemy</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Red Ale</th>
+                                                <td>Reddish Brown</td>
+                                                <td>Medium candy-like caramel malt sweetness and roasted barley.</td>
+                                                <td>Piper Down</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Stout</th>
+                                                <td>Brown to Black</td>
+                                                <td>Dry, outmeal, milk, or imperial varieties with a smooth body.</td>
+                                                <td>Guinness</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-styles">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed cH-color" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                History
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body scrollStyle">
+                                <div class="col mb-4">
+                                    <h6>Notable Dates in Beer History</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>1800 BC (Circa)</h6>
+                                    A "Hymn to Ninkasi," the Sumerian goddess of beer, is inscribed on a tablet, about 4,000 years after men first leave evidence of brewing activity.
+                                </div>
+                                <div class="col">
+                                    <h6>580</h6>
+                                    Saint Arnold of Metz is born, one of dozens of patron saints to beer, brewers and hop-pickers. he helps end a plague by convincing people to drink beer rather than impure water.
+                                </div>
+                                <div class="col">
+                                    <h6>1516</h6>
+                                    The Reinheitsgebot, instituted in Bavaria, is a beer "purity law" that remains today in revised form. The original laws permits beer to be made only with barley, hops and water, later acknowledging yeast and permitting wheat.
+                                </div>
+                                <div class="col">
+                                    <h6>1573</h6>
+                                    Heinrich Knaust writes the first extensive book on brewing in Germany, describing in detail about 150 different beers. he calls the "noble Hamburg beer the queen of all other wheat beers."
+                                </div>
+                                <div class="col">
+                                    <h6>1716</h6>
+                                    The tavern that will become known as the Wayside Inn after being immortalized in Henry Wadsworth longfellow's Tales of a Wayside Inn opens in Sudbury, Mass. Nearly 300 years later it's the oldest continuously operating inn in the United States.
+                                </div>
+                                <div class="col">
+                                    <h6>1814</h6>
+                                    A storage vat at the Horse Shoe Brewery in London containing more than 300,000 gallons of porter collapses, knocking down brewery walls and flooding immediate area. Eight people are killed, "by drowning, injury, poisoning by porter fumes, or drunkenness."
+                                </div>
+                                <div class="col">
+                                    <h6>1919-1933</h6>
+                                    Prohibition, in the form of the 18th Amendment, outlaws the sale of alcohol in the United States. Key dates to remember:
+                                    <ul>
+                                        <li>The 18th Amendment is ratified on January 16, 1919 and goes into effect January 16, 1920.</li>
+                                        <li>On March 23, 1933, President Franklin Roosevelt signs into law legislation permitting the sale of 3.2% alcohol beer.</li>
+                                        <li>On December 5, 1933, the 21st Amendment repeals the 18th Amendment.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-styles">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed cH-color" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Glossary
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-body scrollStyle">
+                                <div class="col">
+                                    <p>#</p>
+                                    <p>18th Amendment: The 18th amendment of the United States Constitution effectively established the prohibition of alcoholic beverages in the United States by declaring illegal the production, transport and sale of alcohol (though not the consumption or private possession).</p>
+                                    <p>21st Amendment: The 21st amendment to the United States Constitution repealed the 18th Amendment to the United States Constitution, which had mandated nationwide Prohibition on alcohol on January 17, 1920.</p>
+                                    <p>A</p>
+                                    <p>Acid Rest: A step done early in the mash around 95F by traditional brewers to lower the pH of the mash.</p>
+                                    <p>Acrospire: The shoot that grows as a barley grain is germinated.</p>
+                                    <p>Adjunct: Any unmalted grain or other fermentable ingredient used in the brewing process. Adjuncts used are typically either rice or corn, and can also include honey, syrups, and numerous other sources of fermentable carbohydrates. They are common in mass produced light American lager-style beers.</p>
+                                    <p>Aeration: The action of introducing air or oxygen to the wort (unfermented beer) at various stages of the brewing process. Proper aeration before primary fermentation is vital to yeast health and vigorous fermentation. Aeration after fermentation is complete can result in beer off-flavors, including cardboard or paper aromas due to oxidation.</p>
+                                    <p>Alcohol: A synonym for ethyl alcohol or ethanol, the colorless primary alcohol constituent of beer. Alcohol ranges for beer vary from less than 3.2% to greater than 14% ABV. However, the majority of craft beer styles average around 5.9% ABV.</p>
+                                    <p>Alcohol by Volume (ABV): A measurement of the alcohol content of a solution in terms of the percentage volume of alcohol per volume of beer. This measurement is always higher than Alcohol by Weight. To calculate the approximate volumetric alcohol content, subtract the final gravity from the original gravity and divide by 0.0075. For example: 1.050 – 1.012 = 0.038/0.0075 = 5% ABV.</p>
+                                    <p>Alcohol by Weight (ABW): A measurement of the alcohol content of a solution in terms of the percentage weight of alcohol per volume of beer. For example: 3.2 percent alcohol by weight equals 3.2 grams of alcohol per 100 centiliters of beer. This measure is always lower than Alcohol by Volume. To calculate the approximate alcohol content by weight, subtract the final gravity from the original gravity and divide by 0.0095. For example: 1.050 – 1.012 = 0.038/0.0095 = 4% ABW.</p>
+                                    <p>Alcoholic: A person with a disabling disorder characterized by compulsive uncontrolled consumption of alcoholic beverages.</p>
+                                    <p>Ale: Ales are beers fermented with top fermenting yeast. Ales typically are fermented at warmer temperatures than lagers, and are often served warmer. The term ale is sometimes incorrectly associated with alcoholic strength.</p>
+                                    <p>Astringency: A characteristic of beer taste mostly caused by tannins, oxidized (phenols), and various aldehydes (in stale beer). Astringency can cause the mouth to pucker and is often perceived as dryness.</p>
+                                    <p>Attenuation: The reduction in wort specific gravity caused by the yeast consuming wort sugars and converting them into alcohol and carbon dioxide gas through fermentation.</p>
+                                    <p>Autolysis: A process in which excess yeast cells feed on each other producing a rubbery or vegetal aroma.</p>
+                                    <p>B</p>
+                                    <p>Barley: A cereal grain derived from the annual grass Hordeum vulgare. Barley is used as a base malt in the production of beer and certain distilled spirits, as well as a food supply for humans and animals.</p>
+                                    <p>Bitterness: In beer, the bitterness is caused by the tannins and iso-humulones of hops. Bitterness of hops is perceived in the taste. The amount of bitterness in a beer is one of the defining characteristics of a beer style.</p>
+                                    <p>Blending: The mixing together of different batches of beer to create a final product.</p>
+                                    <p>Body: The consistency, thickness and mouth-filling property of a beer. The sensation of palate fullness in the mouth ranges from thin- to full-bodied.</p>
+                                    <p>Bung: A sealing stopper, usually a cylindroconical shaped piece of wood or plastic, fitted into the mouth of a cask or older style kegs such as Hoff-Stevens or Golden Gate.</p>
+                                    <p>Bung Hole: The round hole in the side of a cask or older style keg, through which the vessel is filled with beer and then sealed with a bung.</p>
+                                    <p>C</p>
+                                    <p>Carbon Dioxide (CO2): The gaseous by-product of yeast. Carbon dioxide is what gives beer its carbonation (bubbles).</p>
+                                    <p>Cask: A barrel-shaped container for holding beer. Originally made of iron-hooped wooden staves, now most widely available in stainless steel and aluminum.</p>
+                                    <p>Cellaring: Storing or aging beer at a controlled temperature to allow maturing.</p>
+                                    <p>Color: The hue or shade of a beer, primarily derived from grains, sometimes derived from fruit or other ingredients in beer. Beer styles made with caramelized, toasted or roasted malts or grains will exhibit increasingly darker colors. The color of a beer may often, but not always, allow the consumer to anticipate how a beer might taste. It’s important to note that beer color does not equate to alcohol level, mouthfeel or calories in beer.</p>
+                                    <p>E</p>
+                                    <p>Esters: Volatile flavor compounds that form through the interaction of organic acids with alcohols during fermentation and contribute to the fruity aroma and flavor of beer. Esters are very common in ales.</p>
+                                    <p>F</p>
+                                    <p>Fermentation: The chemical conversion of fermentable sugars into approximately equal parts of ethyl alcohol and carbon dioxide gas, through the action of yeast. The two basic methods of fermentation in brewing are top fermentation, which produces ales, and bottom fermentation, which produces lagers.</p>
+                                    <p>G</p>
+                                    <p>Germination: Growth of a barley grain as it produces a rootlet and acrospire.</p>
+                                    <p>Grain: The grains (Barley, wheat, rice, corn, oats, rye, etc.) are much the same as those that are used to make many breakfast cereals The barley and wheat must undergo a malting process before they can be used to make beer.</p>
+                                    <p>H</p>
+                                    <p>Hops: A perennial climbing bine, also known by the Latin botanical name Humulus lupulus. The female plant yields flowers of soft-leaved pine-like cones (strobile) measuring about an inch in length. Only the female ripened flower is used for flavoring beer. Because hops reproduce through cuttings, the male plants are not cultivated and are even rooted out to prevent them from fertilizing the female plants, as the cones would become weighed-down with seeds. There are presently over one hundred varieties of hops cultivated around the world. Apart from contributing bitterness, hops impart aroma and flavor, and inhibit the growth of bacteria in wort and beer.</p>
+                                    <p>K</p>
+                                    <p>Keg: A cylindrical container, usually constructed of steel or sometimes aluminum, commonly used to store, transport and serve beer under pressure. In the U.S.</p>
+                                    <p>L</p>
+                                    <p>Lager: Lagers are any beer that is fermented with bottom-fermenting yeast at colder temperatures. Lagers are most often associated with crisp, clean flavors and are traditionally fermented and served at colder temperatures than ales.</p>
+                                    <p>M</p>
+                                    <p>Malt: Processed barley that has been steeped in water, germinated on malting floors or in germination boxes or drums, and later dried in kilns for the purpose of stopping the germination and converting the insoluble starch in barley to the soluble substances and sugars in malt.</p>
+                                    <p>Milling: The grinding of malt into grist (or meal) to facilitate the extraction of surgars and other soluble substances during the mash process.</p>
+                                    <p>Q</p>
+                                    <p>Quaf: To drink deeply.</p>
+                                    <p>R</p>
+                                    <p>Racking: The process of transferring beer from one vessel to another, especially into the final package or keg.</p>
+                                    <p>S</p>
+                                    <p>Sediment: The refuse of solid matter that settles and accumulates at the bottom of fermenters, conditioning vessels and bottles of bottle-conditioned beer.</p>
+                                    <p>Steeping: The soaking in liquid of a solid so as to extract flavors.</p>
+                                    <p>T</p>
+                                    <p>Tannins: A group of organic compounds contained in certain cereal grains and other plants. Tannins are present in the hop cone. </p>
+                                    <p>Trub: Wort particles resulting from the precipitation of proteins, hop oils and tannins during the boiling and cooling stages of brewing.</p>
+                                    <p>W</p>
+                                    <p>Water: One of the four ingredients in beer. Some beers are made up by as much as 90% water.</p>
+                                    <p>Wort: The bittersweet sugar solution obtained by mashing the malt and boiling in the hops, which becomes beer through fermentation.</p>
+                                    <p>Y</p>
+                                    <p>Yeast: During the fermentation process, yeast converts the natural malt sugars into alcohol and carbon dioxide gas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-1 fixed-bottom">
+                    <h5 class="card-header card-2">Thank you for visiting!</h5>
+                    <div class="card-body card-3 d-none d-sm-block">
+                        <div class="row">
+                            <div class="col-5">
+                                <h7>BeerEon</h7>
+                                <p>Founded in 2021, BeerEon is the go-to beer resource for millions and the hub for beer fun and play.</p>
+                            </div>
+                            <div class="col">
+                                <h7>Connect</h7>
+                                <p><i class="icon-facebook text-primary"></i> Facebook<br>
+                                <i class="icon-twitter text-info"></i> Twitter<br>
+                                <i class="icon-instagram text-danger"></i> Instagram</p>
+                            </div>
+                            <div class="col">
+                                <h7>Legal</h7>
+                                <p>Terms of Use<br>
+                                Privacy Policy<br>
+                                <span class="text-warning">By Matthew Alan Rawles</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer pb-1 card-4">
+                        Copyright c 2021 BeerEon(R). All rights reserved. Enjoy beer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery, Popper.js, Bootstrap JavaScript plubins -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

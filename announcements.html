@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device=width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov&display=swap" rel="stylesheet">
+
+    <title>BeerEon</title>
+</head>
+
+<!-- Body -->
+<body class="view" style="background-image: url('img/fantasy-bg-crop.jpg'); background-repeat: no-repeat; background-size: cover; height: 100vh;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(48, 45, 0, 0.5);">
+        <a class="navbar-brand text-info" href="index.html"><img src="img/beer-mug2-cut.png" height="85" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-info" href="index.html"><i class="icon-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="styles.html"><i class="icon-beer"></i> Styles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#"><i class="icon-anchor"></i> Travel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="forum.html"><i class="icon-book"></i> Forum <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#"><i class="icon-puzzle-piece"></i> Quizzes</a>
+                </li>
+            </ul>
+            <!-- User Login -->
+            <span class="btn dropdown">
+                <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-user icon-large"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" style="background-color:rgba(121, 95, 48, 0.3)" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#loginModal"><i class="icon-signin"></i> Login</a>
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#signUpModal"><i class="icon-edit"></i> Sign-up</a>
+                        <a class="dropdown-item text-dark" data-toggle="modal" data-target="#searchModal"><i class="icon-search"></i> Search</a>
+                    </div>
+            </span>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="loginEmail">Email address</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="loginPassword">Password</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Sign up</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="signUpEmail">Email address</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="signUpEmail" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-4">
+                                    <label for="signUpPassword">Password</label>
+                                </div>
+                                <div class="form-group col">
+                                    <input type="password" class="form-control form-control-sm" id="signUpPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Sign up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-info">
+                    <h3 class="modal-title">Search</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="search">Search</label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input type="email" class="form-control form-control-sm" id="search" placeholder="Enter search">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-dark btn-sm ml-1">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="row">
+            <div class="col container-breadcrumb ">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb arr-right nav-light" style="background-color:rgb(9, 27, 46, .2)">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-light">Home</a></li>
+                        <li class="breadcrumb-item"><a href="forum.html" class="text-light">Forum</a></li>
+                        <li class="breadcrumb-item text-dark active" aria-current="page">Announcements</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div>
+        <h2 class="for-h3">ANNOUNCEMENTS</h2>
+        <p class="p-h3">Announcements from the staff and event listings can be found in this board.</p>
+    </div>
+
+    <!-- Forums -->
+    <div class="container container-forum border border-dark">
+        <div class="row">
+            <div class="col">
+                <h4>Staff Announcement</h4>
+                <div class="scrollStyle">
+                    <p class="p-1">Here the staff will post announcements for the website.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="pb-2">Sticky Threads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Thread #1</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #2</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #3</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="pb-2 pt-4">Normal Threads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Thread #1</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #2</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #3</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #4</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #5</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #6</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-forum border border-dark">
+        <div class="row">
+            <div class="col">
+                <h4>Event Listings</h4>
+                <div class="scrollStyle">
+                    <p class="p-1">Here you may post listings of, and discuss upcoming and past events.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="pb-2">Sticky Threads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Thread #1</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #2</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #3</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="pb-2 pt-4">Normal Threads</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Thread #1</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #2</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #3</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #4</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #5</th>
+                            </tr>
+                            <tr>
+                                <th>Thread #6</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-1 fixed-bottom">
+                    <h5 class="card-header card-2">Thank you for visiting!</h5>
+                    <div class="card-body card-3 d-none d-sm-block">
+                        <div class="row">
+                            <div class="col-5">
+                                <h7>BeerEon</h7>
+                                <p>Founded in 2021, BeerEon is the go-to beer resource for millions and the hub for beer fun and play.</p>
+                            </div>
+                            <div class="col">
+                                <h7>Connect</h7>
+                                <p><i class="icon-facebook text-primary"></i> Facebook<br>
+                                <i class="icon-twitter text-info"></i> Twitter<br>
+                                <i class="icon-instagram text-danger"></i> Instagram</p>
+                            </div>
+                            <div class="col">
+                                <h7>Legal</h7>
+                                <p>Terms of Use<br>
+                                Privacy Policy<br>
+                                <span class="text-warning">By Matthew Alan Rawles</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer pb-1 card-4">
+                        Copyright c 2021 BeerEon(R). All rights reserved. Enjoy beer.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery, Popper.js, Bootstrap JavaScript plubins -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
